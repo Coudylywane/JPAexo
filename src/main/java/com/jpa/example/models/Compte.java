@@ -8,8 +8,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries(
+    {
+        @NamedQuery(name = "Compte.findAllByClient",
+        query = "SELECT c FROM Compte c WHERE c.client =:client")
+    }
+)
 public class Compte {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

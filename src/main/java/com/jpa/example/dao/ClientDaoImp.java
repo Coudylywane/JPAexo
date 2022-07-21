@@ -1,9 +1,7 @@
 package com.jpa.example.dao;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
-
 import com.jpa.example.models.Client;
 
 public class ClientDaoImp implements IClientDao {
@@ -25,6 +23,8 @@ public class ClientDaoImp implements IClientDao {
         }
     }
 
+    
+
     @Override
     public boolean delete(Client o) {
         EntityManager em = PersistanceDao.getEntityManager();
@@ -41,6 +41,8 @@ public class ClientDaoImp implements IClientDao {
             return false;
         }
     }
+
+
 
     @Override
     public boolean update(Client o) {
@@ -59,6 +61,8 @@ public class ClientDaoImp implements IClientDao {
         }
     }
 
+
+
     @Override
     public Client findById(Long s) {
         EntityManager em = PersistanceDao.getEntityManager();
@@ -66,6 +70,8 @@ public class ClientDaoImp implements IClientDao {
         .setParameter("id", s)
         .getSingleResult();
     }
+
+
 
     @Override
     public List<Client> findAll() {

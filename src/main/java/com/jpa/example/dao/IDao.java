@@ -8,4 +8,5 @@ public interface IDao<T, S> {
     boolean update(T o);
     T findById(S s);
     List<T> findAll();
+    
 }
